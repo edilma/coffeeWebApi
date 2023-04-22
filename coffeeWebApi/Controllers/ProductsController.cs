@@ -21,11 +21,23 @@ namespace coffeeWebApi.Controllers
             return _context.Products.ToArray();
         }
 
-        [HttpGet]
-        public ActionResult<Product> GetMyProducts()
+        //[HttpGet][Route("/api/Product/{id}")]
+
+        //[HttpGet]
+        //[Route("{id}")]
+
+        [HttpGet("{id}")]
+        public ActionResult GetProduct(int id)
         {
-            return Ok(_context.Products.ToArray());
+            var product = _context.Products.Find(id);
+            return Ok(product);
         }
+
+        //[HttpGet]
+        //public ActionResult<Product> GetAllProducts()
+        //{
+        //    return Ok(_context.Products.ToArray());
+        //}
 
 
 
