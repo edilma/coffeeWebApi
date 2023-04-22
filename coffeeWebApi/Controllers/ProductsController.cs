@@ -1,6 +1,7 @@
 ﻿using coffeeWebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace coffeeWebApi.Controllers
 {
@@ -15,10 +16,23 @@ namespace coffeeWebApi.Controllers
             _context.Database.EnsureCreated();
         }
 
+        //[HttpGet]
+        //public IEnumerable<Product> GetAllProducts()
+        //{
+        //    return _context.Products.ToArray();
+        //}
+
+        //[HttpGet]
+        //public async Task<IEnumerable<Product>> GetAllProducts
+        //{
+        //    return await _context.Products.ToArrayAsync();
+        //}
+
+
         [HttpGet]
-        public IEnumerable<Product> GetAllProducts()
+        public async Task<ActionResult> GetAllProducts()
         {
-            return _context.Products.ToArray();
+            return Ok(await _context.Products.ToArrayAsync());
         }
 
         //[HttpGet][Route("/api/Product/{id}")]
@@ -27,17 +41,16 @@ namespace coffeeWebApi.Controllers
         //[Route("{id}")]
 
         [HttpGet("{id}")]
-        public ActionResult GetProduct(int id)
+        public async Task<ActionResult> GetProduct(int id)
         {
-            var product = _context.Products.Find(id);
+            var product = await _context.Products.FindAsync();
+            if (product == null)
+            {
+                return NotFound();
+            }
             return Ok(product);
         }
 
-        //[HttpGet]
-        //public ActionResult<Product> GetAllProducts()
-        //{
-        //    return Ok(_context.Products.ToArray());
-        //}
 
 
 
