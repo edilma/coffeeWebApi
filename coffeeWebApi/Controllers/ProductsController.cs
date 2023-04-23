@@ -51,6 +51,17 @@ namespace coffeeWebApi.Controllers
             return Ok(product);
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Product>> PostProduct(Product product)
+        {
+         _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(
+                "GetProduct",
+                new {id = product.Id },
+                product);
+        }
+
 
 
 
