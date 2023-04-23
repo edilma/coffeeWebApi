@@ -108,6 +108,28 @@ namespace coffeeWebApi.Controllers
             return NoContent();
         }
 
+        [HttpPost]
+        [Route("Delete")]
+        public async Task<ActionResult> DeleteManyProducts([FromQuery]  int[] ids)
+        {
+            var products = new List<Product>();
+            foreach (var id in ids)
+            {
+                var aproduct = await _context.Products.FindAsync(id);
+                if (aproduct == null)
+                {
+                    return NotFound();
+                }
+                products.Add(aproduct);
+            }
+
+            _context.Products.RemoveRange(products);
+ 
+            await _context.SaveChangesAsync();
+
+            return Ok(products);
+        }
+
 
 
     }
