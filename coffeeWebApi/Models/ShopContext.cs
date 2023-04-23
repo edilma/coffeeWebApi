@@ -14,7 +14,8 @@ namespace coffeeWebApi.Models
                 .HasMany(c => c.Products)
                 .WithOne(a => a.Category)
                 .HasForeignKey(a => a.CategoryId);
-            ModelBuilderExtensions.Seed(modelBuilder);
+
+            modelBuilder.Seed();
 
             
             
