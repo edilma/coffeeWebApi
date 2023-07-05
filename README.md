@@ -1,6 +1,6 @@
 # Coffee WebAPI
 
-This is a WebAPI project created using .NET 7.0 that implements CRUD operations for managing coffee products. The project uses in-memory data for testing purposes.
+WebAPI project created using .NET 7.0 that implements CRUD operations for managing coffee products. The project uses in-memory data for testing purposes.
 
 ## Features
 
