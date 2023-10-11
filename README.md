@@ -2,6 +2,14 @@
 
 Welcome to the CoffeeShop WebAPI! This is a RESTful API built using C# .NetCore designed to manage products in a coffee shop. Whether you're fetching details of the products, adding a new item, updating, or deleting them, this API has got you covered.
 
+## API Endpoints Overview
+
+Below is a screenshot from Swagger UI showing the available endpoints in this API:
+
+![Swagger UI Endpoints](https://github.com/edilma/coffeeWebApi/blob/master/images/end_points_coffeWebApi.png?raw=true)
+
+![Swagger UI /Products ](https://github.com/edilma/coffeeWebApi/blob/master/images/Get_endPoint.png?raw=true)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
