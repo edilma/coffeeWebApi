@@ -1,6 +1,6 @@
 # CoffeeShop WebAPI
 
-Welcome to the CoffeeShop WebAPI! This is a RESTful API built using C# .NetCore designed to manage products in a coffee shop. Whether you're fetching details of the products, adding a new item, updating, or deleting them, this API has got you covered.
+Welcome to CoffeeShop WebAPI! This is a RESTful API built using C# .NetCore designed to manage products in a coffee shop. Whether you're fetching details of the products, adding a new item, updating, or deleting them, this API has got you covered.
 
 ## API Endpoints Overview
 
